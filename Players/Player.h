@@ -6,6 +6,8 @@
 #ifndef CS234124_EX4_PLAYER_H
 #define CS234124_EX4_PLAYER_H
 
+static const int MAX_LVL = 10;
+
 class Player {
     std::string m_name;
     std::string m_className;
