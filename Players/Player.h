@@ -5,12 +5,13 @@
 #include "HealthPoints.h"
 #ifndef CS234124_EX4_PLAYER_H
 #define CS234124_EX4_PLAYER_H
+using namespace std;
 
 static const int MAX_LVL = 10;
 
 class Player {
-    std::string m_name;
-    std::string m_className;
+    string m_name;
+    string m_className;
     HealthPoints m_hp;
 //    int m_maxHP;
     int m_level;
