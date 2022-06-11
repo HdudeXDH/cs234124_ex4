@@ -2,22 +2,28 @@
 // Created by User on 6/11/2022.
 //
 #include <string>
+#include <memory>
 #include "HealthPoints.h"
 #ifndef CS234124_EX4_PLAYER_H
 #define CS234124_EX4_PLAYER_H
-using namespace std;
 
 static const int MAX_LVL = 10;
+static const int FORCE_DEFAULT = 5;
 
 class Player {
-    string m_name;
-    string m_className;
-    HealthPoints m_hp;
-//    int m_maxHP;
+//    std::string m_name;
+    std::unique_ptr<HealthPoints> m_hp;
+    std::unique_ptr<std::string> m_name;
     int m_level;
     int m_force;
     int m_coins;
+    int m_maxHP;
 public:
+    Player(const char *name); // , int hp=HP_DEFAULT, int force=FORCE_DEFAULT)
+    Player(const Player &)=default;
+    ~Player() = default;
+    Player & operator=(const Player &)=default;
+
     virtual void heal(); //should be overloaded in Wizard
 
     /*
@@ -68,16 +74,11 @@ public:
      */
     bool isKnockedOut();
 
+
     /*
      * Pay the amount, if successful returns true
      */
     bool pay(int amount);
-
-
-    Player(const char *name, int hp=HP_DEFAULT, int force=FORCE_DEFAULT);
-    Player(const Player &)=default;
-    ~Player() = default;
-    Player & operator=(const Player &)=default;
 };
 
 

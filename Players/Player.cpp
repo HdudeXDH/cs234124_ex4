@@ -24,20 +24,21 @@ void Player::buff(int points){
     this->m_force += points;
 }
 
-void Player::heal(int points){ //todo: rebuild
-    if (points<0) {
-        points =0;
-    }
-    if(this->m_hp + points >= this->m_maxHP) this->m_hp = this->m_maxHP;
-    else this->m_hp += points;
+void Player::heal(int points){
+//    if (points<0) {
+//        points =0;
+//    }
+//    if(this->m_hp + points >= this->m_maxHP) this->m_hp = this->m_maxHP;
+//    else this->m_hp += points;
+    *this->m_hp +=points;
 }
 
 void Player::damage(int points){
     if (points<0) {
         points =0;
     }
-    if (this->m_hp - points <= 0) this->m_hp = 0;
-    else this->m_hp -= points;
+    if (*this->m_hp - points <= 0) this->m_hp = 0;
+    else *this->m_hp -= points;
 }
 
 bool Player::isKnockedOut(){
