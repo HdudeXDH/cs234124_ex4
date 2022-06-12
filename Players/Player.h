@@ -85,6 +85,12 @@ public:
      * Pay the amount, if successful returns true
      */
     bool pay(int amount);
+
+    int getCoins();
+
+
+    std::string getName();
+
     friend ostream& operator<<(ostream& os, const Player& dt);
 };
 

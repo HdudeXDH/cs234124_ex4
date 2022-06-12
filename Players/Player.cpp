@@ -70,3 +70,11 @@ bool Player::pay(int amount){
         return false;
     }
 }
+
+int Player::getCoins(){
+    return this->m_coins;
+}
+
+std::string Player::getName(){
+    return this->m_name;
+}
