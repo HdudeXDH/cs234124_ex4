@@ -13,7 +13,6 @@
 using std::string;
 
 
-
 class Battlecards : public Card {
 public:
 
@@ -23,7 +22,9 @@ public:
     Battlecards& operator=(const Battlecards &) = default;
 
     void printInfo() const;
-    virtual void applyEncounter(Battlecards& Battlecards) const = 0;
+    virtual void applyEncounter(Player& player) const;
+
+    ostream& operator<<(ostream& os) const;
 
 
 private:

@@ -14,17 +14,13 @@
 using std::string;
 
 static const int DRAGON_FORCE = 25;
-static const int DRAGON_HPLOSS = 0;
+static const int DRAGON_HPLOSS = 100;
 static const int DRAGON_COINS = 1000;
 
 
-//todo: how to type it here
+
 class Dragon : public Battlecards {
 public:
-
-    void applyEncounter(Player& player) const override;
-
-    void printInfo() const override;
 
     Dragon(const string& name);
 

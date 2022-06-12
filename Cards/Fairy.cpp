@@ -14,9 +14,11 @@ void Fairy::applyEncounter(Player& player) const{
         player.heal(FAIRY_HEAL);
     printFairyMessage(isWizard);
 }
-//todo: check if its ok
+//todo: check if its ok, there might be a problem implementing << as a member
 ostream& Fairy::operator<<(ostream& os) const{
     printCardDetails(os, this->m_name);
     printEndOfCardDetails(os);
     return os;
 }
+
+

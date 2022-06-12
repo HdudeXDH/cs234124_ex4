@@ -18,17 +18,13 @@ static const int GOBLIN_HPLOSS = 10;
 static const int GOBLIN_COINS = 2;
 
 
-//todo: how to type it here
+
 class Goblin : public Battlecards {
 public:
 
-    void applyEncounter(Player& player) const override;
-
-    void printInfo() const override;
-
     Goblin(const string& name);
 
-    Goblin(const Dragon&) = default;
+    Goblin(const Goblin&) = default;
     ~Goblin() = default;
     Goblin& operator=(const Goblin& other) = default;
 

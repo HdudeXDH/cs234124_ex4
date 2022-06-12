@@ -18,17 +18,14 @@ static const int VAMPIRE_HPLOSS = 10;
 static const int VAMPIRE_COINS = 2;
 
 
-//todo: how to type it here
+
 class Vampire : public Battlecards {
 public:
 
-    void applyEncounter(Player& player) const override;
-
-    void printInfo() const override;
 
     Vampire(const string& name);
 
-    Vampire(const Dragon&) = default;
+    Vampire(const Vampire&) = default;
     ~Vampire() = default;
     Vampire& operator=(const Vampire& other) = default;
 

@@ -8,10 +8,3 @@ Dragon::Dragon(const string& name):
         Battlecards(name,DRAGON_FORCE,DRAGON_HPLOSS,DRAGON_COINS)
 {}
 
-void Dragon::applyEncounter(Player& player) const{
-
-}
-//todo: how to print?
-void Dragon::printInfo() const{
-    printCardDetails(std::cout,);
-}
