@@ -4,27 +4,33 @@
 #include <string>
 #include <memory>
 #include "HealthPoints.h"
+#include <iostream>
+using namespace std;
 #ifndef CS234124_EX4_PLAYER_H
 #define CS234124_EX4_PLAYER_H
 
 static const int MAX_LVL = 10;
 static const int FORCE_DEFAULT = 5;
+//enum Type { Fighter, Rogue, Wizard};
 
 class Player {
+    std::string m_name;
+//    std::unique_ptr<std::string> m_name;
+protected:
 //    std::string m_name;
     std::unique_ptr<HealthPoints> m_hp;
-    std::unique_ptr<std::string> m_name;
+    int m_coins;
     int m_level;
     int m_force;
-    int m_coins;
-    int m_maxHP;
 public:
-    Player(const char *name); // , int hp=HP_DEFAULT, int force=FORCE_DEFAULT)
+    explicit Player(std::string name); // , int hp=HP_DEFAULT, int force=FORCE_DEFAULT)
     Player(const Player &)=default;
-    ~Player() = default;
+    virtual ~Player() = default;
     Player & operator=(const Player &)=default;
 
-    virtual void heal(); //should be overloaded in Wizard
+    virtual std::string type() = 0;
+
+//    virtual void heal(int points); //should be overloaded in Wizard
 
     /*
      * return current player strength (force + level)
@@ -79,7 +85,9 @@ public:
      * Pay the amount, if successful returns true
      */
     bool pay(int amount);
+    friend ostream& operator<<(ostream& os, const Player& dt);
 };
+
 
 
 #endif //CS234124_EX4_PLAYER_H

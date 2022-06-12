@@ -1,8 +1,17 @@
 #ifndef MTMCHKIN_H_
 #define MTMCHKIN_H_
+#include <iostream>
+#include <list>
+#include "Players/Player.h"
+#include "Cards/Card.h"
+#include "utilities.h"
 
 class Mtmchkin{
-
+    /// ------ us -----
+    int rounds;
+    std::list<Player> players;
+    std::list<Card> cards;
+    ///
 public:
     
     /*
@@ -46,6 +55,10 @@ public:
     *          int - number of rounds played
     */
     int getNumberOfRounds() const;
+
+    ///---us----
+    int inputTeamSize();
+    int inputPlayer();
 };
 
 

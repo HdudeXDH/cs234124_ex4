@@ -84,3 +84,7 @@ HealthPoints operator-(const int points, const HealthPoints& hp1){
     temp_hp -= points;
     return temp_hp;
 }
+
+int HealthPoints::getHp() {
+    return m_points;
+}

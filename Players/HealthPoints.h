@@ -13,6 +13,7 @@ public:
     HealthPoints(const int hp=HP_DEFAULT);
     HealthPoints(const HealthPoints &hp_instance)= default;
     ~HealthPoints()= default;
+    int getHp();
     HealthPoints &operator=(const HealthPoints& hp)= default;
     HealthPoints &operator-=(const int points);
     HealthPoints &operator+=(const int points);

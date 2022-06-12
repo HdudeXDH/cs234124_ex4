@@ -4,6 +4,12 @@
 
 #include "Player.h"
 
+Player::Player(const std::string name):
+        m_level(1),
+        m_coins(0),
+        m_name(name){
+    m_hp = std::unique_ptr<HealthPoints>(new HealthPoints());
+        }
 void Player::levelUp(){
     if (m_level<MAX_LVL) {
         this->m_level+=1;
