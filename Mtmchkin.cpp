@@ -74,7 +74,9 @@ ostream& operator<<(ostream& os, const Player& p) {
     return os;
 }
 
-Mtmchkin::Mtmchkin(const std::string fileName){
+Mtmchkin::Mtmchkin(const std::string fileName):
+rounds(1)
+{
 
     printStartGameMessage();
     int teamSize = inputTeamSize();
@@ -145,14 +147,16 @@ void Mtmchkin::loadDeck(const std::string fileName) {
 
 void Mtmchkin::playRound() {
     int index = 0;
+    printRoundStartMessage(rounds);
     for (std::vector<std::unique_ptr<Player>>::iterator p = players.begin(); p != players.end(); ++p, ++index){
         if (!(p->get()->outOfGame() )) {
 
             if (nextCard==cards.end()) {
                 nextCard = cards.begin();
             }
-            cout << *p->get() << endl;
-            cout << *nextCard->get() << endl;
+//            cout << *p->get() << endl;
+//            cout << *nextCard->get() << endl;
+            printTurnStartMessage(p->get()->getName());
             nextCard->get()->applyEncounter(*p->get());
             nextCard++;
             if (p->get()->isKnockedOut()){
@@ -178,6 +182,9 @@ void Mtmchkin::playRound() {
 //            p=temp;
 //        }
 
+    }
+    if (isGameOver()){
+        printGameEndMessage();
     }
     rounds++;
 }

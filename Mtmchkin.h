@@ -75,8 +75,8 @@ public:
     void inputPlayer();
     void loadDeck(const std::string fileName);
     cardCode strCardMap(const std::string);
-    void moveLoserPosition(std::vector<std::unique_ptr<Player>>::iterator loser);
-    void moveWinnerPosition(std::vector<std::unique_ptr<Player>>::iterator winner);
+//    void moveLoserPosition(std::vector<std::unique_ptr<Player>>::iterator loser);
+//    void moveWinnerPosition(std::vector<std::unique_ptr<Player>>::iterator winner);
 };
 
 

@@ -6,7 +6,7 @@
 
 Player::Player(const std::string name):
         m_level(1),
-        m_coins(0),
+        m_coins(10),
         m_force(5),
         m_name(name){
     m_hp = std::unique_ptr<HealthPoints>(new HealthPoints());
@@ -33,8 +33,8 @@ int Player::getAttackStrength(){
     return(this->m_level+this->m_force);
 }
 void Player::buff(int points){
-    if (points<0) {
-        points =0;
+    if ((points<0)&&(m_force==0)) {
+        return;
     }
     this->m_force += points;
 }
@@ -89,6 +89,6 @@ std::string Player::getName(){
     return this->m_name;
 }
 bool Player::outOfGame(){
-    bool res =  isKnockedOut() || isWinner();
+    bool res =  (isKnockedOut()) || (isWinner());
     return res;
 }

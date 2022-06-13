@@ -12,8 +12,10 @@ m_coins(coins)
 {}
 
 void Battlecards::applyEncounter(Player &player) const {
+    bool isVampire = this->getName() == "Vampire";
     if(player.getAttackStrength()<this->m_force) {
         player.damage(this->m_hpLoss);
+        if(isVampire) player.buff(-1);
         printLossBattle(player.getName(), this->getName());
     }
     else {
