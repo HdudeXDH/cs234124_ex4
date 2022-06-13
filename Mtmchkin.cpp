@@ -82,7 +82,7 @@ ostream& operator<<(ostream& os, const Player& p) {
 }
 
 Mtmchkin::Mtmchkin(const std::string fileName):
-rounds(1)
+rounds(0)
 {
 
     printStartGameMessage();
@@ -154,7 +154,7 @@ void Mtmchkin::loadDeck(const std::string fileName) {
 
 void Mtmchkin::playRound() {
     int index = 0;
-    printRoundStartMessage(rounds);
+    printRoundStartMessage(rounds+1);
     for (std::vector<std::unique_ptr<Player>>::iterator p = players.begin(); p != players.end(); ++p, ++index){
         if (!(p->get()->outOfGame() )) {
 
@@ -170,7 +170,7 @@ void Mtmchkin::playRound() {
                 losers.push_front(index);
             }
             if (p->get()->isWinner()){
-                losers.push_back(index);
+                winners.push_back(index);
             }
 //            }
 //            else {
@@ -202,11 +202,11 @@ int Mtmchkin::getNumberOfRounds() const {
 
 bool Mtmchkin::isGameOver() const {
     for (std::vector<std::unique_ptr<Player>>::const_iterator p = players.begin(); p != players.end(); ++p){
-        if (!p->get()->outOfGame()) {
+        if (!(p->get()->outOfGame())) {
             return false;
         }
-    return true;
     }
+    return true;
 }
 
 void Mtmchkin::printLeaderBoard() const {
