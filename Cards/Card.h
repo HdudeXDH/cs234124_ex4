@@ -38,10 +38,10 @@ public:
 
     Card() = default;
     Card(const Card&) = default;
-    virtual ~Card() = default;
+    virtual ~Card(){}
     Card& operator=(const Card& other) = default;
 
-    virtual std::string getName() const;
+    virtual std::string getName() const {};
 
 protected:
     virtual void printCardHelp(ostream& os) const;
