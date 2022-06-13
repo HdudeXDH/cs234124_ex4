@@ -41,13 +41,6 @@ void Mtmchkin::inputPlayer(){
             if (!std::isalpha(c)) {
                 validChars=false;
             }
-//            }
-//            else {
-//            cout << *p->get() << endl;
-//            cout << *nextCard->get() << endl;
-//            nextCard->get()->applyEncounter(*p->get());
-//            nextCard++;
-//            }
 
         }
         bool validLength = (name.size()<=15);
@@ -59,15 +52,15 @@ void Mtmchkin::inputPlayer(){
 
         if (job=="Wizard"){
             players.push_back(make_unique<Wizard>(name));
-            break;
+            return;
         }
         if (job=="Fighter"){
             players.push_back(make_unique<Fighter>(name));
-            break;
+            return;
         }
         if (job=="Rogue"){
             players.push_back(make_unique<Rogue>(name));
-            break;
+            return;
         }
 
         printInvalidClass();

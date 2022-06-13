@@ -3,15 +3,15 @@
 #include "Mtmchkin.h"
 int main() {
     const int MAX_NUMBER_OF_ROUNDS = 100;
-    Mtmchkin game("deck.txt");
-    for (int i=0;i<7;i++){
+    Mtmchkin game("deckMerchant.txt");
+//    for (int i=0;i<100;i++){
+//        game.playRound();
+//        game.printLeaderBoard();
+//    }
+    while(!game.isGameOver() && game.getNumberOfRounds() < MAX_NUMBER_OF_ROUNDS){
         game.playRound();
         game.printLeaderBoard();
     }
-//    while(!game.isGameOver() && game.getNumberOfRounds() < MAX_NUMBER_OF_ROUNDS){
-//        game.playRound();
-//    }
-    game.printLeaderBoard();
 
 
 //    ifstream infile;

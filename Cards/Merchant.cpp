@@ -22,6 +22,7 @@ void Merchant::applyEncounter(Player& player) const{
     switch (Answer) {
         case(LEAVE):{
             printMerchantSummary(std::cout,player.getName(),LEAVE,LEAVE);
+            break;
         }
         case(BUY_HP):{
             if(player.getCoins()>=HP_COST) {
@@ -33,6 +34,7 @@ void Merchant::applyEncounter(Player& player) const{
                 printMerchantInsufficientCoins(std::cout);
                 printMerchantSummary(std::cout,player.getName(),LEAVE,LEAVE);
             }
+            break;
         }
         case(BUY_FORCE):{
             if(player.getCoins()>=FORCE_COST) {
@@ -44,6 +46,7 @@ void Merchant::applyEncounter(Player& player) const{
                 printMerchantInsufficientCoins(std::cout);
                 printMerchantSummary(std::cout,player.getName(),LEAVE,LEAVE);
             }
+            break;
         }
 
     }
