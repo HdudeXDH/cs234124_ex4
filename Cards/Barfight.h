@@ -18,6 +18,8 @@ static const int BARFIGHT_DMG = 10;
 class Barfight : public Card {
 public:
 
+    Barfight();
+
     void applyEncounter(Player& player) const override;
 
     ostream& operator<<(ostream& os) const override;

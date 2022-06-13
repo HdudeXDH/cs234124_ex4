@@ -5,12 +5,22 @@
 #include "Players/Player.h"
 #include "Cards/Card.h"
 #include "utilities.h"
-
+enum cardCode {
+    codeBarfight,
+    codeDragon,
+    codeFairy,
+    codeGoblin,
+    codeMerchant,
+    codePitfall,
+    codeTreasure,
+    codeVampire,
+    Error
+};
 class Mtmchkin{
     /// ------ us -----
     int rounds;
-    std::list<Player> players;
-    std::list<Card> cards;
+    std::list<std::unique_ptr<Player>> players;
+    std::list<std::unique_ptr<Card>> cards;
     ///
 public:
     
@@ -58,7 +68,9 @@ public:
 
     ///---us----
     int inputTeamSize();
-    int inputPlayer();
+    void inputPlayer();
+    void loadDeck(const std::string fileName);
+    cardCode strCardMap(const std::string)
 };
 
 

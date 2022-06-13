@@ -5,13 +5,12 @@
 #include <memory>
 #include "HealthPoints.h"
 #include <iostream>
-using namespace std;
+using namespace std; //todo: delete
 #ifndef CS234124_EX4_PLAYER_H
 #define CS234124_EX4_PLAYER_H
 
 static const int MAX_LVL = 10;
 static const int FORCE_DEFAULT = 5;
-//enum Type { Fighter, Rogue, Wizard};
 
 class Player {
     std::string m_name;
