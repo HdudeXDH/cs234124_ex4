@@ -17,11 +17,11 @@ static const int LEAVE = 0;
 
 static const int BUY_HP = 1;
 static const int HP = 1;
-static const int HP_COST = -5;
+static const int HP_COST = 5;
 
 static const int BUY_FORCE = 2;
 static const int FORCE = 1;
-static const int FORCE_COST = -10;
+static const int FORCE_COST = 10;
 
 class Merchant : public Card {
 public:

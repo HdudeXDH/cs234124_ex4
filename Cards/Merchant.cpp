@@ -26,7 +26,7 @@ void Merchant::applyEncounter(Player& player) const{
         case(BUY_HP):{
             if(player.getCoins()>=HP_COST) {
                 player.heal(HP);
-                player.addCoins(HP_COST);
+                player.pay(HP_COST);
                 printMerchantSummary(std::cout,player.getName(),BUY_HP,HP_COST);
             }
             else {
@@ -37,7 +37,7 @@ void Merchant::applyEncounter(Player& player) const{
         case(BUY_FORCE):{
             if(player.getCoins()>=FORCE_COST) {
                 player.buff(FORCE);
-                player.addCoins(FORCE_COST);
+                player.pay(FORCE_COST);
                 printMerchantSummary(std::cout,player.getName(),BUY_FORCE,FORCE_COST);
             }
             else {
