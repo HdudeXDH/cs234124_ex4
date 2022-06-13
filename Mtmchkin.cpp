@@ -41,6 +41,13 @@ void Mtmchkin::inputPlayer(){
             if (!std::isalpha(c)) {
                 validChars=false;
             }
+//            }
+//            else {
+//            cout << *p->get() << endl;
+//            cout << *nextCard->get() << endl;
+//            nextCard->get()->applyEncounter(*p->get());
+//            nextCard++;
+//            }
 
         }
         bool validLength = (name.size()<=15);
