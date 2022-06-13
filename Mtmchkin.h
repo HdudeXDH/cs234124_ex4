@@ -21,6 +21,7 @@ class Mtmchkin{
     int rounds;
     std::list<std::unique_ptr<Player>> players;
     std::list<std::unique_ptr<Card>> cards;
+    std::list<std::unique_ptr<Card>>::iterator nextCard;
     ///
 public:
     

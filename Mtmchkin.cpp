@@ -81,7 +81,7 @@ Mtmchkin::Mtmchkin(const std::string fileName){
         inputPlayer();
     }
     loadDeck(fileName);
-    cout <<"hllo";
+    nextCard=cards.begin();
 }
 
 cardCode Mtmchkin::strCardMap(const std::string raw){
@@ -136,5 +136,38 @@ void Mtmchkin::loadDeck(const std::string fileName) {
 
         }
 
+    }
+}
+
+void Mtmchkin::playRound() {
+    for (std::list<std::unique_ptr<Player>>::iterator p = players.begin(); p != players.end(); ++p){
+//        bool out = p->get()->outOfGame();
+        if (!(p->get()->outOfGame() )) {
+
+            cout << *p->get() << endl;
+            cout << *(nextCard->get())<< endl;
+            nextCard->get()->applyEncounter(*p->get());
+            if (nextCard==cards.end()){
+                nextCard=cards.begin();
+            }
+            else {
+                nextCard++;
+            }
+        }
+
+    }
+    rounds++;
+}
+
+int Mtmchkin::getNumberOfRounds() const {
+    return this->rounds;
+}
+
+bool Mtmchkin::isGameOver() const {
+    for (std::list<std::unique_ptr<Player>>::const_iterator p = players.begin(); p != players.end(); ++p){
+        if (!p->get()->outOfGame()) {
+            return false;
+        }
+    return true;
     }
 };

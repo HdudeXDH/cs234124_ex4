@@ -91,7 +91,8 @@ public:
 
 
     std::string getName();
-
+    bool isWinner();
+    bool outOfGame();
     friend ostream& operator<<(ostream& os, const Player& p);
 };
 

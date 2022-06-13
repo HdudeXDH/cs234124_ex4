@@ -3,7 +3,7 @@
 HealthPoints::HealthPoints(const int hp):
     m_points(hp),
     m_maxHp(hp) {
-    if (hp<=0){
+    if (hp<0){
         throw HealthPoints::InvalidArgument();
     }
 

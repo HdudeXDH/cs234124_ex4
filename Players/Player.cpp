@@ -22,6 +22,13 @@ int Player::getLevel(){
     return this->m_level;
 }
 
+bool Player::isWinner(){
+    if (this->m_level ==10) {
+        return true;
+    }
+    return false;
+}
+
 int Player::getAttackStrength(){
     return(this->m_level+this->m_force);
 }
@@ -42,15 +49,16 @@ void Player::heal(int points){
 }
 
 void Player::damage(int points){
-    if (points<0) {
-        points =0;
-    }
-    if (*this->m_hp - points <= 0) this->m_hp = 0;
-    else *this->m_hp -= points;
+    *this->m_hp -= points;
+//    if (points<0) {
+//        points =0;
+//    }
+//    if (*this->m_hp - points <= 0) this->m_hp = 0;
+//    else *this->m_hp -= points;
 }
 
 bool Player::isKnockedOut(){
-    if(this->m_hp == 0) return true;
+    if(*(this->m_hp.get()) == 0) return true;
     return false;
 }
 
@@ -79,4 +87,8 @@ int Player::getCoins(){
 
 std::string Player::getName(){
     return this->m_name;
+}
+bool Player::outOfGame(){
+    bool res =  isKnockedOut() || isWinner();
+    return res;
 }
