@@ -16,6 +16,6 @@ void Pitfall::applyEncounter(Player& player) const{
     printPitfallMessage(isRogue);
 }
 
-std::string Card::getName() const{
+std::string Pitfall::getName() const{
     return "Pitfall";
 }

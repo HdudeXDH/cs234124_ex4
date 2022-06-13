@@ -9,7 +9,6 @@
 #include "Players/Wizard.h"
 #include "Players/Rogue.h"
 #include "Players/Fighter.h"
-#include "Barfight.h"
 #include "Cards/Barfight.h"
 #include "Cards/Vampire.h"
 #include "Cards/Treasure.h"
@@ -84,15 +83,25 @@ Mtmchkin::Mtmchkin(const std::string fileName){
     loadDeck(fileName);
 }
 
-cardCode Mtmchkin::strCardMap(const std::string){
-
+cardCode Mtmchkin::strCardMap(const std::string raw){
+    if (raw=="Barfight") return codeBarfight;
+    if (raw=="Dragon") return codeDragon;
+    if (raw=="Fairy") return codeFairy;
+    if (raw=="Goblin") return codeGoblin;
+    if (raw=="Merchant") return codeMerchant;
+    if (raw=="Pitfall") return codePitfall;
+    if (raw=="Treasure") return codeTreasure;
+    if (raw=="Vampire") return codeVampire;
+    return cardErrorCode;
 }
 void Mtmchkin::loadDeck(const std::string fileName) {
     // read cards:
     std::ifstream infile(fileName);
     std::string line;
+    int lineCount = 0;
     while (std::getline(infile, line))
     {
+        lineCount++;
         switch(strCardMap(line)) {
             case cardCode::codeBarfight:
                 cards.push_back(make_unique<Barfight>());
@@ -119,9 +128,8 @@ void Mtmchkin::loadDeck(const std::string fileName) {
                 cards.push_back(make_unique<Vampire>());
                 break;
             default:
-                throw DeckFileFormatError("sdfsd");
-            case Error:
-                break;
+                throw DeckFileFormatError(lineCount);
+
         }
 
     }

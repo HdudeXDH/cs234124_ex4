@@ -14,7 +14,7 @@ void Fairy::applyEncounter(Player& player) const{
         player.heal(FAIRY_HEAL);
     printFairyMessage(isWizard);
 }
-std::string Card::getName() const{
+std::string Fairy::getName() const{
     return "Fairy";
 }
 

@@ -50,6 +50,6 @@ void Merchant::applyEncounter(Player& player) const{
 
 }
 
-std::string Card::getName() const{
+std::string Merchant::getName() const{
     return "Merchant";
 }

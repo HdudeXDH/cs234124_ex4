@@ -8,6 +8,6 @@ Vampire::Vampire():
         Battlecards(VAMPIRE_FORCE,VAMPIRE_HPLOSS,VAMPIRE_COINS)
 {}
 
-std::string Card::getName() const{
+std::string Vampire::getName() const{
     return "Vampire";
 }

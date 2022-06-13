@@ -15,6 +15,6 @@ void Barfight::applyEncounter(Player& player) const{
         player.damage(BARFIGHT_DMG);
 }
 
-std::string Card::getName() const{
+std::string Barfight::getName() const{
     return "Barfight";
 }

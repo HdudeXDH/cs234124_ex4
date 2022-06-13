@@ -12,6 +12,6 @@ void Treasure::applyEncounter(Player& player) const{
     printTreasureMessage();
 }
 
-std::string Card::getName() const{
+std::string Treasure::getName() const{
     return "Treasure";
 }

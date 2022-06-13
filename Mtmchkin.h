@@ -14,7 +14,7 @@ enum cardCode {
     codePitfall,
     codeTreasure,
     codeVampire,
-    Error
+    cardErrorCode
 };
 class Mtmchkin{
     /// ------ us -----
@@ -70,7 +70,7 @@ public:
     int inputTeamSize();
     void inputPlayer();
     void loadDeck(const std::string fileName);
-    cardCode strCardMap(const std::string)
+    cardCode strCardMap(const std::string);
 };
 
 

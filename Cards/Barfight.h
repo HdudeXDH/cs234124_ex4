@@ -19,18 +19,14 @@ class Barfight : public Card {
 public:
 
     Barfight();
-    virtual std::string getName() const override;
-    void applyEncounter(Player& player) const override;
-
-
-    Barfight(const std::string& name);
-
     Barfight(const Barfight&) = default;
     ~Barfight() = default;
     Barfight& operator=(const Barfight& other) = default;
+    virtual std::string getName() const override;
+    void applyEncounter(Player& player) const override;
 
+//    Barfight(const std::string& name);
 
-private:
 };
 
 

@@ -18,15 +18,12 @@ static const int PITFALL_DMG = 10;
 class Pitfall : public Card {
 public:
 
-    void applyEncounter(Player& player) const override;
-
-
-
     Pitfall();
-    virtual std::string getName() const override;
     Pitfall(const Pitfall&) = default;
     ~Pitfall() = default;
     Pitfall& operator=(const Pitfall& other) = default;
+    void applyEncounter(Player& player) const override;
+    virtual std::string getName() const override;
 
 
 private:
