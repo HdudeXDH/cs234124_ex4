@@ -32,8 +32,8 @@ int Mtmchkin::inputTeamSize(){
 
 void Mtmchkin::inputPlayer(){
     std::string name, job;
+    printInsertPlayerMessage();
     while (true) {
-        printInsertPlayerMessage();
         std::cin >> name >>job;
 
         bool validChars = true;
@@ -86,11 +86,11 @@ rounds(0)
 {
 
     printStartGameMessage();
+    loadDeck(fileName);
     int teamSize = inputTeamSize();
     for (int i=0; i<teamSize;i++){
         inputPlayer();
     }
-    loadDeck(fileName);
     nextCard=cards.begin();
 }
 
