@@ -24,11 +24,10 @@ void Battlecards::applyEncounter(Player &player) const {
 }
 
 
-ostream& Battlecards::operator<<(ostream& os) const{
+void Battlecards::printCardHelp(ostream& os) const{
     bool isDragon = this->m_name == "Dragon";
     printCardDetails(os,this->m_name);
     printMonsterDetails(os,this->m_force,this->m_hpLoss,this->m_coins,isDragon);
     printEndOfCardDetails(os);
-    return os;
 }
 

@@ -20,7 +20,7 @@ public:
 
     void applyEncounter(Player& player) const override;
 
-    ostream& operator<<(ostream& os) const override;
+
 
     Pitfall(const std::string& name);
 

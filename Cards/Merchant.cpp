@@ -29,7 +29,10 @@ void Merchant::applyEncounter(Player& player) const{
                 player.addCoins(HP_COST);
                 printMerchantSummary(std::cout,player.getName(),BUY_HP,HP_COST);
             }
-            else printMerchantInsufficientCoins(std::cout);
+            else {
+                printMerchantInsufficientCoins(std::cout);
+                printMerchantSummary(std::cout,player.getName(),LEAVE,LEAVE);
+            }
         }
         case(BUY_FORCE):{
             if(player.getCoins()>=FORCE_COST) {
@@ -37,15 +40,13 @@ void Merchant::applyEncounter(Player& player) const{
                 player.addCoins(FORCE_COST);
                 printMerchantSummary(std::cout,player.getName(),BUY_FORCE,FORCE_COST);
             }
-            else printMerchantInsufficientCoins(std::cout);
+            else {
+                printMerchantInsufficientCoins(std::cout);
+                printMerchantSummary(std::cout,player.getName(),LEAVE,LEAVE);
+            }
         }
 
     }
 
 }
 
-ostream& Merchant::operator<<(ostream& os) const{
-    printCardDetails(os,this->m_name);
-    printEndOfCardDetails(os);
-    return os;
-}

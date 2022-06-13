@@ -15,8 +15,3 @@ void Barfight::applyEncounter(Player& player) const{
         player.damage(BARFIGHT_DMG);
 }
 
-ostream& Barfight::operator<<(ostream& os) const{
-    printCardDetails(os, this->m_name);
-    printEndOfCardDetails(os);
-    return os;
-}

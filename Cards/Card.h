@@ -3,6 +3,7 @@
 //
 #include "../Players/Player.h"
 #include "../Players/HealthPoints.h"
+#include "../utilities.h"
 #include <string>
 #include <memory>
 #include <iostream>
@@ -32,8 +33,8 @@ public:
      *      void
     */
 
-    //todo: check if its legit to use << like this
-    virtual ostream& operator<<(ostream& os) const = 0;
+    //todo:: there might be a problem with the << solution or overloading
+    friend std::ostream& operator<<(ostream& os,const Card& card);
 
     Card(const std::string& name);
     Card(const Card&) = default;
@@ -42,6 +43,7 @@ public:
 
 protected:
     std::string m_name;
+    virtual void printCardHelp(ostream& os) const;
 
 };
 

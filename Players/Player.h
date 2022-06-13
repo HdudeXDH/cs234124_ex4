@@ -5,7 +5,7 @@
 #include <memory>
 #include "HealthPoints.h"
 #include <iostream>
-using namespace std;
+
 #ifndef CS234124_EX4_PLAYER_H
 #define CS234124_EX4_PLAYER_H
 

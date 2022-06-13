@@ -28,7 +28,6 @@ public:
 
     void applyEncounter(Player& player) const override;
 
-    ostream& operator<<(ostream& os) const override;
 
     Merchant(const std::string& name);
 
