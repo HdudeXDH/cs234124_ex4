@@ -144,15 +144,16 @@ void Mtmchkin::playRound() {
 //        bool out = p->get()->outOfGame();
         if (!(p->get()->outOfGame() )) {
 
-            cout << *p->get() << endl;
-            cout << *(nextCard->get())<< endl;
-            nextCard->get()->applyEncounter(*p->get());
             if (nextCard==cards.end()){
                 nextCard=cards.begin();
             }
             else {
-                nextCard++;
+            cout << *p->get() << endl;
+            cout << *nextCard->get() << endl;
+            nextCard->get()->applyEncounter(*p->get());
+            nextCard++;
             }
+
         }
 
     }
