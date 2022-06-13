@@ -135,6 +135,8 @@ void Mtmchkin::loadDeck(const std::string fileName) {
                 throw DeckFileFormatError(lineCount);
 
         }
+        if(lineCount<5)
+            throw DeckFileInvalidSize();
 
     }
 }
@@ -146,6 +148,10 @@ void Mtmchkin::playRound() {
 
             if (nextCard==cards.end()){
                 nextCard=cards.begin();
+                cout << *p->get() << endl;
+                cout << *nextCard->get() << endl;
+                nextCard->get()->applyEncounter(*p->get());
+                nextCard++;
             }
             else {
             cout << *p->get() << endl;
