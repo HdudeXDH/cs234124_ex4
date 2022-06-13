@@ -51,15 +51,15 @@ void Mtmchkin::inputPlayer(){
         }
 
         if (job=="Wizard"){
-            players.push_back(make_unique<Wizard>(name));
+            players.push_back(std::unique_ptr<Wizard>(new Wizard(name)));
             return;
         }
         if (job=="Fighter"){
-            players.push_back(make_unique<Fighter>(name));
+            players.push_back(std::unique_ptr<Fighter>(new Fighter(name)));
             return;
         }
         if (job=="Rogue"){
-            players.push_back(make_unique<Rogue>(name));
+            players.push_back(std::unique_ptr<Rogue>(new Rogue(name)));
             return;
         }
 
@@ -111,28 +111,28 @@ void Mtmchkin::loadDeck(const std::string fileName) {
         lineCount++;
         switch(strCardMap(line)) {
             case cardCode::codeBarfight:
-                cards.push_back(make_unique<Barfight>());
+                cards.push_back(std::unique_ptr<Barfight>(new Barfight()));
                 break;
             case codeDragon:
-                cards.push_back(make_unique<Dragon>());
+                cards.push_back(std::unique_ptr<Dragon>(new Dragon()));
                 break;
             case codeFairy:
-                cards.push_back(make_unique<Fairy>());
+                cards.push_back(std::unique_ptr<Fairy>(new Fairy()));
                 break;
             case codeGoblin:
-                cards.push_back(make_unique<Goblin>());
+                cards.push_back(std::unique_ptr<Goblin>(new Goblin()));
                 break;
             case codeMerchant:
-                cards.push_back(make_unique<Merchant>());
+                cards.push_back(std::unique_ptr<Merchant>(new Merchant()));
                 break;
             case codePitfall:
-                cards.push_back(make_unique<Pitfall>());
+                cards.push_back(std::unique_ptr<Pitfall>(new Pitfall()));
                 break;
             case codeTreasure:
-                cards.push_back(make_unique<Treasure>());
+                cards.push_back(std::unique_ptr<Treasure>(new Treasure()));
                 break;
             case codeVampire:
-                cards.push_back(make_unique<Vampire>());
+                cards.push_back(std::unique_ptr<Vampire>(new Vampire()));
                 break;
             default:
                 throw DeckFileFormatError(lineCount);
