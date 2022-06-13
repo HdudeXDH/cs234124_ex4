@@ -12,10 +12,7 @@ void Rogue::addCoins(int amount){
         amount =0;
     }
     this->m_coins+=2*amount;
-};
+}
 std::string Rogue::type() const{
     return "Rogue";
-};
-//Rogue::~Rogue() noexcept {
-//
-//}
+}

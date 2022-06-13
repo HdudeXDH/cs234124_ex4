@@ -41,7 +41,7 @@ public:
     virtual ~Card(){}
     Card& operator=(const Card& other) = default;
 
-    virtual std::string getName() const {};
+    virtual std::string getName() const {return "";};
 
 protected:
     virtual void printCardHelp(ostream& os) const;

@@ -11,4 +11,4 @@ int Fighter::getAttackStrength() {
 }
 std::string Fighter::type() const{
     return "Fighter";
-};
+}

@@ -18,11 +18,11 @@ class Player {
     std::string m_name;
 //    std::unique_ptr<std::string> m_name;
 protected:
+    int m_level;
+    int m_coins;
+    int m_force;
 //    std::string m_name;
     std::unique_ptr<HealthPoints> m_hp;
-    int m_coins;
-    int m_level;
-    int m_force;
 public:
     explicit Player(std::string name); // , int hp=HP_DEFAULT, int force=FORCE_DEFAULT)
     Player(const Player &)=default;
