@@ -11,7 +11,7 @@
 #include "../utilities.h"
 #include <string>
 #include <memory>
-using std::string;
+
 
 static const int DRAGON_FORCE = 25;
 static const int DRAGON_HPLOSS = 100;
@@ -22,7 +22,7 @@ static const int DRAGON_COINS = 1000;
 class Dragon : public Battlecards {
 public:
 
-    Dragon(const string& name);
+    Dragon(const std::string& name);
 
     Dragon(const Dragon&) = default;
     ~Dragon() = default;

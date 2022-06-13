@@ -4,7 +4,7 @@
 
 
 #include "Pitfall.h"
-Pitfall::Pitfall(const string& name):
+Pitfall::Pitfall(const std::string& name):
         Card(name)
 {}
 

@@ -4,7 +4,7 @@
 
 #include "Merchant.h"
 
-Merchant::Merchant(const string& name):
+Merchant::Merchant(const std::string& name):
         Card(name)
 {}
 

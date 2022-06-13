@@ -4,7 +4,7 @@
 
 
 #include "Barfight.h"
-Barfight::Barfight(const string& name):
+Barfight::Barfight(const std::string& name):
         Card(name)
 {}
 

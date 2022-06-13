@@ -10,13 +10,13 @@
 #include "../utilities.h"
 #include <string>
 #include <memory>
-using std::string;
+
 
 
 class Battlecards : public Card {
 public:
 
-    Battlecards(const string& name,int force,int hpLoss,int coins);
+    Battlecards(const std::string& name,int force,int hpLoss,int coins);
     Battlecards(const Battlecards &)=default;
     ~Battlecards() = default;
     Battlecards& operator=(const Battlecards &) = default;

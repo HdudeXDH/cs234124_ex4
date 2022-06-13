@@ -11,7 +11,7 @@
 #include "../utilities.h"
 #include <string>
 #include <memory>
-using std::string;
+
 
 static const int BARFIGHT_DMG = 10;
 
@@ -22,7 +22,7 @@ public:
 
     ostream& operator<<(ostream& os) const override;
 
-    Barfight(const string& name);
+    Barfight(const std::string& name);
 
     Barfight(const Barfight&) = default;
     ~Barfight() = default;

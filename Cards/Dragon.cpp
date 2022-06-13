@@ -4,7 +4,7 @@
 
 
 #include "Dragon.h"
-Dragon::Dragon(const string& name):
+Dragon::Dragon(const std::string& name):
         Battlecards(name,DRAGON_FORCE,DRAGON_HPLOSS,DRAGON_COINS)
 {}
 

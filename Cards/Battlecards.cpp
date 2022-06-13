@@ -4,7 +4,7 @@
 
 #include "Battlecards.h"
 
-Battlecards::Battlecards(const string& name,int force,int hpLoss,int coins):
+Battlecards::Battlecards(const std::string& name,int force,int hpLoss,int coins):
 Card(name),
 m_force(force),
 m_hpLoss(hpLoss),

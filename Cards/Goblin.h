@@ -11,7 +11,6 @@
 #include "../utilities.h"
 #include <string>
 #include <memory>
-using std::string;
 
 static const int GOBLIN_FORCE = 6;
 static const int GOBLIN_HPLOSS = 10;
@@ -22,7 +21,7 @@ static const int GOBLIN_COINS = 2;
 class Goblin : public Battlecards {
 public:
 
-    Goblin(const string& name);
+    Goblin(const std::string& name);
 
     Goblin(const Goblin&) = default;
     ~Goblin() = default;

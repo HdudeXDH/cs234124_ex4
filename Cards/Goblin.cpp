@@ -4,7 +4,7 @@
 
 
 #include "Goblin.h"
-Goblin::Goblin(const string& name):
+Goblin::Goblin(const std::string& name):
         Battlecards(name,GOBLIN_FORCE,GOBLIN_HPLOSS,GOBLIN_COINS)
 {}
 

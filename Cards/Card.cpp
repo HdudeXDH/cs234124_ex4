@@ -5,7 +5,7 @@
 #include "Card.h"
 
 
-Card::Card(const string& name):
+Card::Card(const std::string& name):
 m_name(name){
 }
 

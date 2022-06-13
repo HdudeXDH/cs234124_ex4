@@ -10,7 +10,7 @@
 #include "../utilities.h"
 #include <string>
 #include <memory>
-using std::string;
+
 
 static const int TREASURE_COINS = 10;
 
@@ -21,7 +21,7 @@ void applyEncounter(Player& player) const override;
 
     ostream& operator<<(ostream& os) const override;
 
-Treasure(const string& name);
+Treasure(const std::string& name);
 
 Treasure(const Treasure&) = default;
 ~Treasure() = default;

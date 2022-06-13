@@ -11,7 +11,7 @@
 #include "../utilities.h"
 #include <string>
 #include <memory>
-using std::string;
+
 
 static const int LEAVE = 0;
 
@@ -30,7 +30,7 @@ public:
 
     ostream& operator<<(ostream& os) const override;
 
-    Merchant(const string& name);
+    Merchant(const std::string& name);
 
     Merchant(const Merchant&) = default;
     ~Merchant() = default;

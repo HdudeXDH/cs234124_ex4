@@ -3,7 +3,7 @@
 //
 
 #include "Fairy.h"
-Fairy::Fairy(const string& name):
+Fairy::Fairy(const std::string& name):
 Card(name)
 {}
 

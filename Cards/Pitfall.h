@@ -11,7 +11,7 @@
 #include "../utilities.h"
 #include <string>
 #include <memory>
-using std::string;
+
 
 static const int PITFALL_DMG = 10;
 
@@ -22,7 +22,7 @@ public:
 
     ostream& operator<<(ostream& os) const override;
 
-    Pitfall(const string& name);
+    Pitfall(const std::string& name);
 
     Pitfall(const Pitfall&) = default;
     ~Pitfall() = default;

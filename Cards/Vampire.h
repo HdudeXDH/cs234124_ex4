@@ -11,7 +11,7 @@
 #include "../utilities.h"
 #include <string>
 #include <memory>
-using std::string;
+
 
 static const int VAMPIRE_FORCE = 10;
 static const int VAMPIRE_HPLOSS = 10;
@@ -23,7 +23,7 @@ class Vampire : public Battlecards {
 public:
 
 
-    Vampire(const string& name);
+    Vampire(const std::string& name);
 
     Vampire(const Vampire&) = default;
     ~Vampire() = default;

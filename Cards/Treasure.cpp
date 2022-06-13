@@ -3,7 +3,7 @@
 //
 
 #include "Treasure.h"
-Treasure::Treasure(const string& name):
+Treasure::Treasure(const std::string& name):
 Card(name)
 {}
 

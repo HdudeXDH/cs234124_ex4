@@ -11,7 +11,7 @@
 #include "../utilities.h"
 #include <string>
 #include <memory>
-using std::string;
+
 
 static const int FAIRY_HEAL = 10;
 
@@ -22,7 +22,7 @@ public:
 
     ostream& operator<<(ostream& os) const override;
 
-    Fairy(const string& name);
+    Fairy(const std::string& name);
 
     Fairy(const Fairy&) = default;
     ~Fairy() = default;

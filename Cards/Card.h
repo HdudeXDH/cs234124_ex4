@@ -10,9 +10,6 @@
 #ifndef CS234124_EX4_CARD_H
 #define CS234124_EX4_CARD_H
 
-using std::string;
-
-
 
 
 
@@ -38,13 +35,13 @@ public:
     //todo: check if its legit to use << like this
     virtual ostream& operator<<(ostream& os) const = 0;
 
-    Card(const string& name);
+    Card(const std::string& name);
     Card(const Card&) = default;
     ~Card() = default;
     Card& operator=(const Card& other) = default;
 
 protected:
-    string m_name;
+    std::string m_name;
 
 };
 
