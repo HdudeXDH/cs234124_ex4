@@ -22,8 +22,8 @@ static const int DRAGON_COINS = 1000;
 class Dragon : public Battlecards {
 public:
 
-    Dragon(const std::string& name);
-
+    Dragon();
+    virtual std::string getName() const override;
     Dragon(const Dragon&) = default;
     ~Dragon() = default;
     Dragon& operator=(const Dragon& other) = default;

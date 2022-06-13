@@ -15,7 +15,7 @@
 class Battlecards : public Card {
 public:
 
-    Battlecards(const std::string& name,int force,int hpLoss,int coins);
+    Battlecards(int force,int hpLoss,int coins);
     Battlecards(const Battlecards &)=default;
     ~Battlecards() = default;
     Battlecards& operator=(const Battlecards &) = default;

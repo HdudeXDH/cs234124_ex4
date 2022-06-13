@@ -23,7 +23,9 @@ class Vampire : public Battlecards {
 public:
 
 
-    Vampire(const std::string& name);
+    Vampire();
+
+    virtual std::string getName() const override;
 
     Vampire(const Vampire&) = default;
     ~Vampire() = default;

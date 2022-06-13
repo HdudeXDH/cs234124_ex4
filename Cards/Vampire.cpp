@@ -4,7 +4,10 @@
 
 
 #include "Vampire.h"
-Vampire::Vampire(const std::string& name):
-        Battlecards(name,VAMPIRE_FORCE,VAMPIRE_HPLOSS,VAMPIRE_COINS)
+Vampire::Vampire():
+        Battlecards(VAMPIRE_FORCE,VAMPIRE_HPLOSS,VAMPIRE_COINS)
 {}
 
+std::string Card::getName() const{
+    return "Vampire";
+}

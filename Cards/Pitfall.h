@@ -22,8 +22,8 @@ public:
 
 
 
-    Pitfall(const std::string& name);
-
+    Pitfall();
+    virtual std::string getName() const override;
     Pitfall(const Pitfall&) = default;
     ~Pitfall() = default;
     Pitfall& operator=(const Pitfall& other) = default;

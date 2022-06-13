@@ -21,8 +21,8 @@ void applyEncounter(Player& player) const override;
 
 
 
-Treasure(const std::string& name);
-
+Treasure();
+    virtual std::string getName() const override;
 Treasure(const Treasure&) = default;
 ~Treasure() = default;
 Treasure& operator=(const Treasure& other) = default;

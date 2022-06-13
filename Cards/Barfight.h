@@ -19,7 +19,7 @@ class Barfight : public Card {
 public:
 
     Barfight();
-
+    virtual std::string getName() const override;
     void applyEncounter(Player& player) const override;
 
 

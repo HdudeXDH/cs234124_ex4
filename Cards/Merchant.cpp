@@ -4,8 +4,8 @@
 
 #include "Merchant.h"
 
-Merchant::Merchant(const std::string& name):
-        Card(name)
+Merchant::Merchant():
+        Card()
 {}
 
 
@@ -50,3 +50,6 @@ void Merchant::applyEncounter(Player& player) const{
 
 }
 
+std::string Card::getName() const{
+    return "Merchant";
+}

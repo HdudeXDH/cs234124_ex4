@@ -21,8 +21,8 @@ public:
     void applyEncounter(Player& player) const override;
 
 
-    Fairy(const std::string& name);
-
+    Fairy();
+    virtual std::string getName() const override;
     Fairy(const Fairy&) = default;
     ~Fairy() = default;
     Fairy& operator=(const Fairy& other) = default;

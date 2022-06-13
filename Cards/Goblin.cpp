@@ -4,7 +4,10 @@
 
 
 #include "Goblin.h"
-Goblin::Goblin(const std::string& name):
-        Battlecards(name,GOBLIN_FORCE,GOBLIN_HPLOSS,GOBLIN_COINS)
+Goblin::Goblin():
+        Battlecards(GOBLIN_FORCE,GOBLIN_HPLOSS,GOBLIN_COINS)
 {}
 
+std::string Card::getName() const{
+    return "Goblin";
+}

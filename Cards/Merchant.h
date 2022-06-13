@@ -29,8 +29,8 @@ public:
     void applyEncounter(Player& player) const override;
 
 
-    Merchant(const std::string& name);
-
+    Merchant();
+    virtual std::string getName() const override;
     Merchant(const Merchant&) = default;
     ~Merchant() = default;
     Merchant& operator=(const Merchant& other) = default;

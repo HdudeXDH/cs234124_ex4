@@ -4,7 +4,9 @@
 
 
 #include "Dragon.h"
-Dragon::Dragon(const std::string& name):
-        Battlecards(name,DRAGON_FORCE,DRAGON_HPLOSS,DRAGON_COINS)
+Dragon::Dragon():
+        Battlecards(DRAGON_FORCE,DRAGON_HPLOSS,DRAGON_COINS)
 {}
-
+std::string Card::getName() const{
+    return "Dragon";
+}

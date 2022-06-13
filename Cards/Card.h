@@ -36,13 +36,14 @@ public:
     //todo:: there might be a problem with the << solution or overloading
     friend std::ostream& operator<<(ostream& os,const Card& card);
 
-    Card(const std::string& name);
+    Card() = default;
     Card(const Card&) = default;
     ~Card() = default;
     Card& operator=(const Card& other) = default;
 
+    virtual std::string getName() const;
+
 protected:
-    std::string m_name;
     virtual void printCardHelp(ostream& os) const;
 
 };

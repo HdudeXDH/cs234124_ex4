@@ -3,8 +3,8 @@
 //
 
 #include "Treasure.h"
-Treasure::Treasure(const std::string& name):
-Card(name)
+Treasure::Treasure():
+Card()
 {}
 
 void Treasure::applyEncounter(Player& player) const{
@@ -12,3 +12,6 @@ void Treasure::applyEncounter(Player& player) const{
     printTreasureMessage();
 }
 
+std::string Card::getName() const{
+    return "Treasure";
+}

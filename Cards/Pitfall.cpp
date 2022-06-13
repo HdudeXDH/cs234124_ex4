@@ -4,8 +4,8 @@
 
 
 #include "Pitfall.h"
-Pitfall::Pitfall(const std::string& name):
-        Card(name)
+Pitfall::Pitfall():
+        Card()
 {}
 
 
@@ -16,3 +16,6 @@ void Pitfall::applyEncounter(Player& player) const{
     printPitfallMessage(isRogue);
 }
 
+std::string Card::getName() const{
+    return "Pitfall";
+}

@@ -4,8 +4,8 @@
 
 
 #include "Barfight.h"
-Barfight::Barfight(const std::string& name):
-        Card(name)
+Barfight::Barfight():
+Card()
 {}
 
 
@@ -15,3 +15,6 @@ void Barfight::applyEncounter(Player& player) const{
         player.damage(BARFIGHT_DMG);
 }
 
+std::string Card::getName() const{
+    return "Barfight";
+}

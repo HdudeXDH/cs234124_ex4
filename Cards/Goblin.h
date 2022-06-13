@@ -21,8 +21,8 @@ static const int GOBLIN_COINS = 2;
 class Goblin : public Battlecards {
 public:
 
-    Goblin(const std::string& name);
-
+    Goblin();
+    virtual std::string getName() const override;
     Goblin(const Goblin&) = default;
     ~Goblin() = default;
     Goblin& operator=(const Goblin& other) = default;

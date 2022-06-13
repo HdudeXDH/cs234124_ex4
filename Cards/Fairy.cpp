@@ -3,8 +3,8 @@
 //
 
 #include "Fairy.h"
-Fairy::Fairy(const std::string& name):
-Card(name)
+Fairy::Fairy():
+Card()
 {}
 
 
@@ -14,6 +14,8 @@ void Fairy::applyEncounter(Player& player) const{
         player.heal(FAIRY_HEAL);
     printFairyMessage(isWizard);
 }
-
+std::string Card::getName() const{
+    return "Fairy";
+}
 
 
