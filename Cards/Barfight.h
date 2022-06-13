@@ -25,7 +25,6 @@ public:
     virtual std::string getName() const override;
     void applyEncounter(Player& player) const override;
 
-//    Barfight(const std::string& name);
 
 };
 

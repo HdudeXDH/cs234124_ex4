@@ -38,7 +38,7 @@ public:
 
     Card() = default;
     Card(const Card&) = default;
-    ~Card() = default;
+    virtual ~Card() = default;
     Card& operator=(const Card& other) = default;
 
     virtual std::string getName() const;

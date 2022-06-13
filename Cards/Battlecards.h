@@ -6,6 +6,9 @@
 #define CS234124_EX4_BATTLECARDS_H
 
 #include "Card.h"
+#include "Dragon.h"
+#include "Vampire.h"
+#include "Goblin.h"
 #include "../Players/Player.h"
 #include <string>
 #include <memory>
@@ -17,8 +20,11 @@ public:
 
     Battlecards(int force,int hpLoss,int coins);
     Battlecards(const Battlecards &)=default;
-    ~Battlecards() = default;
+    virtual ~Battlecards();
     Battlecards& operator=(const Battlecards &) = default;
+    virtual std::string getName() const = 0;
+
+
 
     void printInfo() const;
     virtual void applyEncounter(Player& player) const override;
