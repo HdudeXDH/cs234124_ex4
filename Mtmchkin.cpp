@@ -81,6 +81,7 @@ Mtmchkin::Mtmchkin(const std::string fileName){
         inputPlayer();
     }
     loadDeck(fileName);
+    cout <<"hllo";
 }
 
 cardCode Mtmchkin::strCardMap(const std::string raw){
@@ -97,6 +98,9 @@ cardCode Mtmchkin::strCardMap(const std::string raw){
 void Mtmchkin::loadDeck(const std::string fileName) {
     // read cards:
     std::ifstream infile(fileName);
+    if (infile.fail()) {
+       throw DeckFileNotFound();
+    }
     std::string line;
     int lineCount = 0;
     while (std::getline(infile, line))
