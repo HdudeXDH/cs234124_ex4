@@ -28,7 +28,7 @@ public:
     virtual ~Player() = default;
     Player & operator=(const Player &)=default;
 
-    virtual std::string type() = 0;
+    virtual std::string type() const= 0 ;
 
 //    virtual void heal(int points); //should be overloaded in Wizard
 
@@ -91,7 +91,7 @@ public:
 
     std::string getName();
 
-    friend ostream& operator<<(ostream& os, const Player& dt);
+    friend ostream& operator<<(ostream& os, const Player& p);
 };
 
 

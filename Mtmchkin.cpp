@@ -30,10 +30,9 @@ int Mtmchkin::inputPlayer(){
 //        std::cin.ignore(256, '\n');
 //    }
 }
-ostream& operator<<(ostream& os, Player& p) {
-//    std::string job = p.type();
-
-    printPlayerDetails(os,p.m_name,job, p.m_level, (*p.m_hp).getHp(), p.m_coins);
+ostream& operator<<(ostream& os, const Player& p) {
+    std::string job =p.type();
+    printPlayerDetails(os,p.m_name,job, p.m_level, p.m_force, (*p.m_hp).getHp(), p.m_coins);
     return os;
 }
 

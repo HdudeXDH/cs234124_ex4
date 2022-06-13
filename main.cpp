@@ -13,3 +13,4 @@ int main() {
     }
     return 0;
 }
+/// should run a game with 100 rounds top and started with deck.txt
