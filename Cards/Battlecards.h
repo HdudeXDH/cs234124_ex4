@@ -7,7 +7,6 @@
 
 #include "Card.h"
 #include "../Players/Player.h"
-#include "../utilities.h"
 #include <string>
 #include <memory>
 
@@ -22,15 +21,15 @@ public:
     Battlecards& operator=(const Battlecards &) = default;
 
     void printInfo() const;
-    virtual void applyEncounter(Player& player) const;
-
-    ostream& operator<<(ostream& os) const;
+    virtual void applyEncounter(Player& player) const override;
 
 
-private:
+protected:
     int m_force;
     int m_hpLoss;
     int m_coins;
+    virtual void printCardHelp(ostream& os) const override;
+
 };
 
 

@@ -20,7 +20,6 @@ public:
 
     void applyEncounter(Player& player) const override;
 
-    ostream& operator<<(ostream& os) const override;
 
     Fairy(const std::string& name);
 

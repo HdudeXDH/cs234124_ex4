@@ -12,8 +12,3 @@ void Treasure::applyEncounter(Player& player) const{
     printTreasureMessage();
 }
 
-ostream& Treasure::operator<<(ostream& os) const{
-    printCardDetails(os, this->m_name);
-    printEndOfCardDetails(os);
-    return os;
-}
