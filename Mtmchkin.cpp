@@ -41,6 +41,7 @@ void Mtmchkin::inputPlayer(){
             if (!std::isalpha(c)) {
                 validChars=false;
             }
+
         }
         bool validLength = (name.size()<=15);
 
@@ -135,32 +136,47 @@ void Mtmchkin::loadDeck(const std::string fileName) {
                 throw DeckFileFormatError(lineCount);
 
         }
-        if(lineCount<5)
-            throw DeckFileInvalidSize();
+
 
     }
+    if(lineCount<5)
+        throw DeckFileInvalidSize();
 }
 
 void Mtmchkin::playRound() {
-    for (std::list<std::unique_ptr<Player>>::iterator p = players.begin(); p != players.end(); ++p){
-//        bool out = p->get()->outOfGame();
+    int index = 0;
+    for (std::vector<std::unique_ptr<Player>>::iterator p = players.begin(); p != players.end(); ++p, ++index){
         if (!(p->get()->outOfGame() )) {
 
-            if (nextCard==cards.end()){
-                nextCard=cards.begin();
-                cout << *p->get() << endl;
-                cout << *nextCard->get() << endl;
-                nextCard->get()->applyEncounter(*p->get());
-                nextCard++;
+            if (nextCard==cards.end()) {
+                nextCard = cards.begin();
             }
-            else {
             cout << *p->get() << endl;
             cout << *nextCard->get() << endl;
             nextCard->get()->applyEncounter(*p->get());
             nextCard++;
+            if (p->get()->isKnockedOut()){
+                losers.push_front(index);
             }
+            if (p->get()->isWinner()){
+                losers.push_back(index);
+            }
+//            }
+//            else {
+//            cout << *p->get() << endl;
+//            cout << *nextCard->get() << endl;
+//            nextCard->get()->applyEncounter(*p->get());
+//            nextCard++;
+//            }
 
         }
+//        for (std::vector<std::unique_ptr<Player>>::iterator p = players.begin(); p != players.end(); ++p){
+//            std::vector<std::unique_ptr<Player>>::iterator temp = ++p;
+//            if ((--p)->get()->isKnockedOut()){
+//                moveLoserPosition(p);
+//            }
+//            p=temp;
+//        }
 
     }
     rounds++;
@@ -171,10 +187,51 @@ int Mtmchkin::getNumberOfRounds() const {
 }
 
 bool Mtmchkin::isGameOver() const {
-    for (std::list<std::unique_ptr<Player>>::const_iterator p = players.begin(); p != players.end(); ++p){
+    for (std::vector<std::unique_ptr<Player>>::const_iterator p = players.begin(); p != players.end(); ++p){
         if (!p->get()->outOfGame()) {
             return false;
         }
     return true;
     }
-};
+}
+
+void Mtmchkin::printLeaderBoard() const {
+    printLeaderBoardStartMessage();
+    int rank = 1;
+    for (std::list<int>::const_iterator it = winners.begin() ; it != winners.end(); ++it){
+        printPlayerLeaderBoard(rank,*players[*it].get());
+        rank++;
+    }
+
+    for (std::vector<std::unique_ptr<Player>>::const_iterator p = players.begin(); p != players.end(); ++p) {
+        if (!(p->get()->outOfGame())){
+            printPlayerLeaderBoard(rank,*p->get());
+            rank++;
+        }
+
+    }
+    for (std::list<int>::const_iterator it = losers.begin() ; it != losers.end(); ++it){
+        printPlayerLeaderBoard(rank,*players[*it].get());
+        rank++;
+    }
+//    for (std::vector<std::unique_ptr<Player>>::const_iterator p = losers.begin(); p != losers.end(); ++p) {
+//        printPlayerLeaderBoard(rank,*p->get());
+//        rank++;
+//    }
+
+}
+//
+//void Mtmchkin::moveLoserPosition(std::vector<std::unique_ptr<Player>>::iterator loser) {
+//
+//    }
+//}
+//
+//void Mtmchkin::moveWinnerPosition(std::vector<std::unique_ptr<Player>>::iterator winner) {
+//
+////    for (std::vector<std::unique_ptr<Player>>::iterator p = players.begin(); p != winner; ++p) {
+////        if (!(p->get()->isWinner())) {
+////            players.splice(winners.end(),winners,winner);
+////            return;
+////        }
+////    }
+//};

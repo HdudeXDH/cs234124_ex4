@@ -6,11 +6,12 @@ int main() {
     Mtmchkin game("deck.txt");
     for (int i=0;i<7;i++){
         game.playRound();
+        game.printLeaderBoard();
     }
 //    while(!game.isGameOver() && game.getNumberOfRounds() < MAX_NUMBER_OF_ROUNDS){
 //        game.playRound();
 //    }
-//    game.printLeaderBoard();
+    game.printLeaderBoard();
 
 
 //    ifstream infile;

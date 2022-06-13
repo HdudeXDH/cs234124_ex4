@@ -2,6 +2,7 @@
 #define MTMCHKIN_H_
 #include <iostream>
 #include <list>
+#include <vector>
 #include "Players/Player.h"
 #include "Cards/Card.h"
 #include "utilities.h"
@@ -19,7 +20,9 @@ enum cardCode {
 class Mtmchkin{
     /// ------ us -----
     int rounds;
-    std::list<std::unique_ptr<Player>> players;
+    std::vector<std::unique_ptr<Player>> players;
+    std::list<int> winners;
+    std::list<int> losers;
     std::list<std::unique_ptr<Card>> cards;
     std::list<std::unique_ptr<Card>>::iterator nextCard;
     ///
@@ -72,6 +75,8 @@ public:
     void inputPlayer();
     void loadDeck(const std::string fileName);
     cardCode strCardMap(const std::string);
+    void moveLoserPosition(std::vector<std::unique_ptr<Player>>::iterator loser);
+    void moveWinnerPosition(std::vector<std::unique_ptr<Player>>::iterator winner);
 };
 
 
