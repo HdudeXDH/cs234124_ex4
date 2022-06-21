@@ -1,29 +1,24 @@
-#include <iostream>
 
 #include "..\Mtmchkin.h"
+#include "..\Exception.h"
+/// should run a game with 100 rounds top and started with deck.txt
 int main() {
     const int MAX_NUMBER_OF_ROUNDS = 100;
-    Mtmchkin game("deckMerchant.txt");
-//    for (int i=0;i<100;i++){
-//        game.playRound();
-//        game.printLeaderBoard();
-//    }
-    while(!game.isGameOver() && game.getNumberOfRounds() < MAX_NUMBER_OF_ROUNDS){
-        game.playRound();
-        game.printLeaderBoard();
+    try {
+        Mtmchkin game("deck.txt");
+        while(!game.isGameOver() && game.getNumberOfRounds() < MAX_NUMBER_OF_ROUNDS){
+            game.playRound();
+            game.printLeaderBoard();
+        }
+    } catch( DeckFileNotFound &exc) {
+        std::cout << exc.what() << endl;
+        return -1;
+    } catch( DeckFileFormatError &exc) {
+        std::cout << exc.what() << endl;
+        return -1;
+    } catch( DeckFileInvalidSize &exc) {
+        std::cout << exc.what() << endl;
+        return -1;
     }
 
-
-//    ifstream infile;
-//    infile.open("./deck.txt");
-//    if (infile.fail()) {
-//        cout << "alon";
-//    }
-//    std::string line;
-//    int lineCount = 0;
-//    while (std::getline(infile, line))
-//    {
-//        cout<<line;
-//    }
 }
-/// should run a game with 100 rounds top and started with deck.txt

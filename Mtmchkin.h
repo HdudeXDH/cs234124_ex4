@@ -6,6 +6,7 @@
 #include "Players/Player.h"
 #include "Cards/Card.h"
 #include "utilities.h"
+
 enum cardCode {
     codeBarfight,
     codeDragon,

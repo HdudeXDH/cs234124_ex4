@@ -1,6 +1,3 @@
-//
-// Created by ofir1 on 11-Jun-22.
-//
 
 #include "Fighter.h"
 Fighter::Fighter(const std::string name):

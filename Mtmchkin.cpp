@@ -1,6 +1,3 @@
-//
-// Created by User on 6/12/2022.
-//
 
 #include "Mtmchkin.h"
 #include <string>
@@ -18,7 +15,6 @@
 #include "Cards/Fairy.h"
 #include "Cards/Dragon.h"
 
-bool checkReadInput(string)
 
 int Mtmchkin::inputTeamSize(){
     printEnterTeamSizeMessage();
@@ -112,7 +108,6 @@ void Mtmchkin::loadDeck(const std::string fileName) {
     while (std::getline(infile, line,'\n'))
     {
         lineCount++;
-//        cout << line.length() << line <<endl;
         //handling \r in linux
         if (!line.empty() && line[line.size() - 1] == '\r')
             line.erase(line.size() - 1);
@@ -146,7 +141,6 @@ void Mtmchkin::loadDeck(const std::string fileName) {
 
         }
 
-
     }
     if(lineCount<5)
         throw DeckFileInvalidSize();
@@ -161,8 +155,6 @@ void Mtmchkin::playRound() {
             if (nextCard==cards.end()) {
                 nextCard = cards.begin();
             }
-//            cout << *p->get() << endl;
-//            cout << *nextCard->get() << endl;
             printTurnStartMessage(p->get()->getName());
             nextCard->get()->applyEncounter(*p->get());
             nextCard++;
@@ -172,22 +164,8 @@ void Mtmchkin::playRound() {
             if (p->get()->isWinner()){
                 winners.push_back(index);
             }
-//            }
-//            else {
-//            cout << *p->get() << endl;
-//            cout << *nextCard->get() << endl;
-//            nextCard->get()->applyEncounter(*p->get());
-//            nextCard++;
-//            }
 
         }
-//        for (std::vector<std::unique_ptr<Player>>::iterator p = players.begin(); p != players.end(); ++p){
-//            std::vector<std::unique_ptr<Player>>::iterator temp = ++p;
-//            if ((--p)->get()->isKnockedOut()){
-//                moveLoserPosition(p);
-//            }
-//            p=temp;
-//        }
 
     }
     if (isGameOver()){
@@ -228,24 +206,4 @@ void Mtmchkin::printLeaderBoard() const {
         printPlayerLeaderBoard(rank,*players[*it].get());
         rank++;
     }
-//    for (std::vector<std::unique_ptr<Player>>::const_iterator p = losers.begin(); p != losers.end(); ++p) {
-//        printPlayerLeaderBoard(rank,*p->get());
-//        rank++;
-//    }
-
 }
-//
-//void Mtmchkin::moveLoserPosition(std::vector<std::unique_ptr<Player>>::iterator loser) {
-//
-//    }
-//}
-//
-//void Mtmchkin::moveWinnerPosition(std::vector<std::unique_ptr<Player>>::iterator winner) {
-//
-////    for (std::vector<std::unique_ptr<Player>>::iterator p = players.begin(); p != winner; ++p) {
-////        if (!(p->get()->isWinner())) {
-////            players.splice(winners.end(),winners,winner);
-////            return;
-////        }
-////    }
-//};

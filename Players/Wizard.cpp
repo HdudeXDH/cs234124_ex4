@@ -1,6 +1,4 @@
-//
-// Created by ofir1 on 11-Jun-22.
-//
+
 #include "Wizard.h"
 
 Wizard::Wizard(const std::string name):

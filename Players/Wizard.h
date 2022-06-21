@@ -1,6 +1,4 @@
-//
-// Created by ofir1 on 11-Jun-22.
-//
+
 #include "Player.h"
 
 #ifndef CS234124_EX4_WIZARD_H
