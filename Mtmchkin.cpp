@@ -106,9 +106,13 @@ void Mtmchkin::loadDeck(const std::string fileName) {
     }
     std::string line;
     int lineCount = 0;
-    while (std::getline(infile, line))
+    while (std::getline(infile, line,'\n'))
     {
         lineCount++;
+//        cout << line.length() << line <<endl;
+        //handling \r in linux
+        if (!line.empty() && line[line.size() - 1] == '\r')
+            line.erase(line.size() - 1);
         switch(strCardMap(line)) {
             case cardCode::codeBarfight:
                 cards.push_back(std::unique_ptr<Barfight>(new Barfight()));

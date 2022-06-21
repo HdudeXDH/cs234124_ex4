@@ -3,7 +3,7 @@
 #include "Mtmchkin.h"
 int main() {
     const int MAX_NUMBER_OF_ROUNDS = 100;
-    Mtmchkin game("deckMerchant.txt");
+    Mtmchkin game("inFiles/test1.deck");
 //    for (int i=0;i<100;i++){
 //        game.playRound();
 //        game.printLeaderBoard();
