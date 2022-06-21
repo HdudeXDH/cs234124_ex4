@@ -35,7 +35,7 @@ void Merchant::applyEncounter(Player& player) const{
             }
             else {
                 printMerchantInsufficientCoins(std::cout);
-                printMerchantSummary(std::cout,player.getName(),LEAVE,LEAVE);
+                printMerchantSummary(std::cout,player.getName(),BUY_HP,LEAVE); //todo: whether we agree
             }
             break;
         }
@@ -47,7 +47,7 @@ void Merchant::applyEncounter(Player& player) const{
             }
             else {
                 printMerchantInsufficientCoins(std::cout);
-                printMerchantSummary(std::cout,player.getName(),LEAVE,LEAVE);
+                printMerchantSummary(std::cout,player.getName(),BUY_FORCE,LEAVE); //todo: whether we agree
             }
             break;
         }
