@@ -29,7 +29,6 @@ public:
     Dragon& operator=(const Dragon& other) = default;
 
 
-private:
 };
 
 

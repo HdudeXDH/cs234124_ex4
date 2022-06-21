@@ -4,6 +4,8 @@
 
 #include "Battlecards.h"
 
+static const int VAMPIRE_BUFF_DMG = -1
+
 Battlecards::Battlecards(int force,int hpLoss,int coins):
 Card(),
 m_force(force),
@@ -15,7 +17,7 @@ void Battlecards::applyEncounter(Player &player) const {
     bool isVampire = this->getName() == "Vampire";
     if(player.getAttackStrength()<this->m_force) {
         player.damage(this->m_hpLoss);
-        if(isVampire) player.buff(-1);
+        if(isVampire) player.buff(VAMPIRE_BUFF_DMG);
         printLossBattle(player.getName(), this->getName());
     }
     else {

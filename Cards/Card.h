@@ -33,7 +33,6 @@ public:
      *      void
     */
 
-    //todo:: there might be a problem with the << solution or overloading
     friend std::ostream& operator<<(ostream& os,const Card& card);
 
     Card() = default;

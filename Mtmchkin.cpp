@@ -18,6 +18,8 @@
 #include "Cards/Fairy.h"
 #include "Cards/Dragon.h"
 
+bool checkReadInput(string)
+
 int Mtmchkin::inputTeamSize(){
     printEnterTeamSizeMessage();
     int teamSize;

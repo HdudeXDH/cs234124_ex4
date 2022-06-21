@@ -25,8 +25,6 @@ public:
     void applyEncounter(Player& player) const override;
     virtual std::string getName() const override;
 
-
-private:
 };
 
 

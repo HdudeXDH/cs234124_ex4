@@ -31,8 +31,6 @@ public:
     ~Vampire() = default;
     Vampire& operator=(const Vampire& other) = default;
 
-
-private:
 };
 
 

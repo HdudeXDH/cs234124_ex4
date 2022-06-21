@@ -28,7 +28,7 @@ public:
     Goblin& operator=(const Goblin& other) = default;
 
 
-private:
+
 };
 
 

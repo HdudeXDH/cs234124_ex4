@@ -18,7 +18,7 @@ void Merchant::applyEncounter(Player& player) const{
 //        bool check =;
         printInvalidInput();
         std::cin.clear();
-        std::cin.ignore(256, '\n');
+        std::cin.ignore(CHUNK_SIZE, '\n');
 //        std::cin >> Answer;
     }
 

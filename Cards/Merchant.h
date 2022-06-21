@@ -12,6 +12,7 @@
 #include <string>
 #include <memory>
 
+static const int CHUNK_SIZE = 256;
 
 static const int LEAVE = 0;
 
@@ -28,15 +29,12 @@ public:
 
     void applyEncounter(Player& player) const override;
 
-
     Merchant();
     virtual std::string getName() const override;
     Merchant(const Merchant&) = default;
     ~Merchant() = default;
     Merchant& operator=(const Merchant& other) = default;
 
-
-private:
 };
 
 
