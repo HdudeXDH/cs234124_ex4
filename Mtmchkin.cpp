@@ -24,6 +24,7 @@ int Mtmchkin::inputTeamSize(){
     while ((!(std::cin >> teamSize)) || (teamSize <2) || (teamSize>6))
     {
         printInvalidTeamSize();
+        printEnterTeamSizeMessage();
         std::cin.clear();
         std::cin.ignore(256, '\n');
     }

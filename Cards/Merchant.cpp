@@ -11,12 +11,15 @@ Merchant::Merchant():
 
 void Merchant::applyEncounter(Player& player) const{
     printMerchantInitialMessageForInteractiveEncounter(std::cout, player.getName(), player.getCoins());
-    int Answer = 0;
-    std::cin >> Answer;
+    int Answer;
+//    std::cin >> Answer;
 
-    while(Answer!=LEAVE && Answer!=BUY_HP && Answer!=BUY_FORCE) {
+    while((std::cin >> Answer).fail() || ((Answer!=LEAVE) && (Answer!=BUY_HP) && (Answer!=BUY_FORCE))) {
+//        bool check =;
         printInvalidInput();
-        std::cin >> Answer;
+        std::cin.clear();
+        std::cin.ignore(256, '\n');
+//        std::cin >> Answer;
     }
 
     switch (Answer) {
