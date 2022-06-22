@@ -1,6 +1,3 @@
-//
-// Created by User on 6/11/2022.
-//
 #include "../Players/Player.h"
 #include "../Players/HealthPoints.h"
 #include "../utilities.h"

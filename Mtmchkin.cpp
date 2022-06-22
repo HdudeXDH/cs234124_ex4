@@ -14,17 +14,37 @@
 #include "Cards/Goblin.h"
 #include "Cards/Fairy.h"
 #include "Cards/Dragon.h"
+#include <set>
+#include <map>
 
-
+std::map<std::string, int> mMTM { {"2", 2},{"3", 3},{"4", 4},
+                               {"5", 5} ,{"6", 6}, };
+std::set<std::string> mysetTS{"2","3","4","5","6"};
 int Mtmchkin::inputTeamSize(){
     printEnterTeamSizeMessage();
     int teamSize;
-    while ((!(std::cin >> teamSize)) || (teamSize <2) || (teamSize>6))
-    {
+//    while ((!(std::cin >> teamSize)) || (teamSize <2) || (teamSize>6))
+//    {
+//        printInvalidTeamSize();
+//        printEnterTeamSizeMessage();
+//        std::cin.clear();
+//        std::cin.ignore(256, '\n');
+//    }
+    while (true) {
+        string response;
+        getline(cin, response);
+        if (!response.empty() && response[response.size() - 1] == '\r')
+            response.erase(response.size() - 1);
+//        std::size_t listsize = sizeof mylist / sizeof mylist[0];
+        if (mysetTS.find(response) != mysetTS.end()){
+            teamSize = mMTM[response];
+            break;
+        }
         printInvalidTeamSize();
         printEnterTeamSizeMessage();
+
         std::cin.clear();
-        std::cin.ignore(256, '\n');
+//        std::cin.ignore(CHUNK_SIZE, '\n');
     }
     return teamSize;
 }
@@ -34,7 +54,7 @@ void Mtmchkin::inputPlayer(){
     printInsertPlayerMessage();
     while (true) {
         std::cin >> name >>job;
-
+        cin.ignore(255,'\n');
         bool validChars = true;
         for (char const &c: name) {
             if (!std::isalpha(c)) {

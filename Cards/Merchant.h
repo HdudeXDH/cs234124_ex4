@@ -1,6 +1,3 @@
-//
-// Created by ofir1 on 12-Jun-22.
-//
 
 #ifndef CS234124_EX4_MERCHANT_H
 #define CS234124_EX4_MERCHANT_H
@@ -12,7 +9,7 @@
 #include <string>
 #include <memory>
 
-static const int CHUNK_SIZE = 256;
+static const int CHUNK_SIZE = 255;
 
 static const int LEAVE = 0;
 

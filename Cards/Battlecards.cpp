@@ -4,7 +4,7 @@
 
 #include "Battlecards.h"
 
-static const int VAMPIRE_BUFF_DMG = -1
+static const int VAMPIRE_BUFF_DMG = -1;
 
 Battlecards::Battlecards(int force,int hpLoss,int coins):
 Card(),

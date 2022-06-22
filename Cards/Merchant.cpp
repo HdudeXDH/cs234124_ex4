@@ -1,53 +1,38 @@
-//
-// Created by ofir1 on 12-Jun-22.
-//
+
 #include <string>
+#include <set>
+#include <map>
 #include "Merchant.h"
+std::map<std::string, int> m { {"0", 0}, {"1", 1}, {"2", 2}, };
 
 Merchant::Merchant():
         Card()
 {}
 
-//bool checkMerchantInput(string raw){
-//    for (char const &c: raw) {
-//        if (!std::isdigit(c)) {
-//            return false;
-//        }
-//
-//    }
-//    if (raw.length()==0) {
-//        return false;
-//    }
-//    int Answer = std::stoi(raw);
-//    if ((Answer!=LEAVE) && (Answer!=BUY_HP) && (Answer!=BUY_FORCE))
-//        return false;
-//    return true;
-//}
+std::set<std::string> myset{"0", "1", "2"};
 
 void Merchant::applyEncounter(Player& player) const{
     printMerchantInitialMessageForInteractiveEncounter(std::cout, player.getName(), player.getCoins());
     int Answer;
     string RawAnswer;
-
-    while((std::cin >> Answer).fail() || ((Answer!=LEAVE) && (Answer!=BUY_HP) && (Answer!=BUY_FORCE))) {
-//        bool check =;
-//        std::getline(std::cin , RawAnswer);
-//        if (RawAnswer.empty()){
-//            continue;
-//        }
-//        std::istringstream iss(RawAnswer);
-//        if ((!RawAnswer.empty()) ||(std::cin >> Answer).good() || !((Answer!=LEAVE) && (Answer!=BUY_HP) && (Answer!=BUY_FORCE))){
-//            break;
-//        }
-//        if (checkMerchantInput(RawAnswer)){
-//            Answer = std::stoi(RawAnswer);
-//            break;
-//        }
+//    cin.ignore();
+    while (true) {
+        string response;
+        getline(cin, response);
+//        std::size_t listsize = sizeof mylist / sizeof mylist[0];
+        if (myset.find(response) != myset.end()){
+            Answer = m[response];
+            break;
+        }
         printInvalidInput();
-        std::cin.clear();
-        std::cin.ignore(CHUNK_SIZE, '\n');
-//        std::cin >> Answer;
+//        std::cin.clear();
+//        std::cin.ignore(CHUNK_SIZE, '\n');
     }
+//    while((std::cin >> Answer).fail() || ((Answer!=LEAVE) && (Answer!=BUY_HP) && (Answer!=BUY_FORCE))) {
+//        printInvalidInput();
+//        std::cin.clear();
+//        std::cin.ignore(CHUNK_SIZE, '\n');
+//    }
 
     switch (Answer) {
         case(LEAVE):{
